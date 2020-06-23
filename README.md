@@ -63,6 +63,14 @@ pip install -r requirements.txt
 The tests should pass (6 tests). After running runserver, you should be able to use Postman to
 test the app by going to http://127.0.0.1:8000/ and hitting the `/hello/<name>` url.
 
+If you want to use the Django admin, create a superuser first:
+```buildoutcfg
+./manage.py createsuperuser --username <your_name> --email <you@example.com>
+```
+You will be prompted to specify a password.
+
+Now you can go to http://127.0.0.1:8000/admin to use the admin panel.
+
 ### Run the project with gunicorn:
 
 gunicorn is a python WSGI server that was installed with `pip install` above.
