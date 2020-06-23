@@ -82,3 +82,5 @@ gunicorn birthday.wsgi --user www-data --bind 0.0.0.0:8010 --workers 3
 to bind the app to port 8010 on localhost, for example.
 
 (On a Mac, you'll need to change the user, `www-data` doesn't exist by default). 
+
+This is what you should use in production, if you want to deploy in a container for example.
