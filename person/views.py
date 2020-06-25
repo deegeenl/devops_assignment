@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
 from person.models import Person
 
@@ -19,6 +20,7 @@ class ApiView(View):
         greeting = "Happy Birthday!" if days == 0 else f"Your birthday is in {days} days."
         return JsonResponse({'message': message + " " + greeting})
 
+    @csrf_exempt
     def put(self, request, name):
         try:
             data = json.loads(request.body)
